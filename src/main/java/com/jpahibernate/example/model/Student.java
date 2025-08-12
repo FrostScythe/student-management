@@ -28,6 +28,9 @@ public class Student {
     @Column(name="grade",nullable = false)
     private String grade;
 
+    @Column(name="mobile_no",nullable = false,unique = true)
+    private String moblieNo;
+
     public int getId() {
         return id;
     }
@@ -74,5 +77,13 @@ public class Student {
 
     public void setGrade(String grade) {
         this.grade = grade;
+    }
+
+    public String getMoblieNo() {
+        return moblieNo;
+    }
+
+    public void setMoblieNo(String moblieNo) {
+        this.moblieNo = moblieNo;
     }
 }
