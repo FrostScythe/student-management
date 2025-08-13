@@ -4,6 +4,7 @@ import com.jpahibernate.example.model.Student;
 import com.jpahibernate.example.service.StudentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -15,7 +16,7 @@ public class StudentController {
     StudentService studentService;
 
     @PostMapping("/save")
-    public String saveStudent(Student studentRequest){
+    public String saveStudent(@RequestBody Student studentRequest){
         String response =studentService.addStudent(studentRequest);
         return response;
     }
