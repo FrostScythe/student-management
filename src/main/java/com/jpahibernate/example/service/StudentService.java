@@ -37,4 +37,15 @@ public class StudentService {
         long totalCount= studentRepository.count();
         return "Total student present are: "+totalCount;
     }
+
+    public String updateStudentinPut(int id, Student newStudentRequest){
+        Student existingStudent = getStudentById(id);
+        if(existingStudent != null){
+            newStudentRequest.setId(id); // Set the ID explicitly
+            studentRepository.save(newStudentRequest);
+            return "Student updated successfully";
+        } else {
+            return "Student not found, hence cannot be updated";
+        }
+    }
 }

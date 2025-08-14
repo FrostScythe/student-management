@@ -37,4 +37,10 @@ public class StudentController {
         String response =studentService.countStudent();
         return response;
     }
+
+    @PutMapping("/updatePut/{id}")
+    public String  updateStudentUsingPut(@PathVariable int id, @RequestBody Student newStudentRequest){
+        String response=studentService.updateStudentinPut(id,newStudentRequest);
+        return response;
+    }
 }
