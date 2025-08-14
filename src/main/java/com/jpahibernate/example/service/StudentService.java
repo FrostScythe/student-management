@@ -6,6 +6,7 @@ import com.jpahibernate.example.repository.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Optional;
 
 @Service // it contains the business logic
@@ -25,5 +26,10 @@ public class StudentService {
        }else{
            return null;
        }
+    }
+
+    public List<Student> getAllStudent(){
+        List<Student> studentList=studentRepository.findAll();
+        return studentList;
     }
 }
