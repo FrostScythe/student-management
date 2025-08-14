@@ -32,4 +32,9 @@ public class StudentService {
         List<Student> studentList=studentRepository.findAll();
         return studentList;
     }
+
+    public String countStudent(){
+        long totalCount= studentRepository.count();
+        return "Total student present are: "+totalCount;
+    }
 }

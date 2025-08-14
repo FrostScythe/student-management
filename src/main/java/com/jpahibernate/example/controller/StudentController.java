@@ -31,4 +31,10 @@ public class StudentController {
         List<Student> studentList =studentService.getAllStudent();
         return studentList;
     }
+
+    @GetMapping("/count")
+    public String countStudent(){
+        String response =studentService.countStudent();
+        return response;
+    }
 }
