@@ -59,4 +59,9 @@ public class StudentService {
             return "Email not found, hence cannot be updated";
         }
     }
+
+    public String deleteStudentbyId(int id){
+        studentRepository.deleteById(id);
+        return "Student with id: " +id+" got deleted successfully!";
+    }
 }

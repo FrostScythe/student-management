@@ -50,4 +50,10 @@ public class StudentController {
         String response=studentService.updateStudentinPatch(id,newEmail);
         return response;
     }
+
+    @DeleteMapping ("/delete/{id}")
+    public String  deleteStudentbyId(@PathVariable int id){
+        String response=studentService.deleteStudentbyId(id);
+        return response;
+    }
 }
