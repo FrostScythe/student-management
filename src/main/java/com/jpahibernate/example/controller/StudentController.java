@@ -43,4 +43,11 @@ public class StudentController {
         String response=studentService.updateStudentinPut(id,newStudentRequest);
         return response;
     }
+
+    //@RequestParm - only requesting that particular parameter(takes in the form of request parameter query)
+    @PatchMapping ("/updatePatch/{id}")
+    public String  updateStudentUsingPatch(@PathVariable int id, @RequestParam String newEmail){
+        String response=studentService.updateStudentinPatch(id,newEmail);
+        return response;
+    }
 }

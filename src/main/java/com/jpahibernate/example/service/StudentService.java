@@ -48,4 +48,15 @@ public class StudentService {
             return "Student not found, hence cannot be updated";
         }
     }
+
+    public String updateStudentinPatch(int id, String newEmail){
+        Student existingStudent = getStudentById(id);
+        if(existingStudent != null){
+            existingStudent.setEmail(newEmail); // Set the ID explicitly
+            studentRepository.save(existingStudent);
+            return "Email updated successfully";
+        } else {
+            return "Email not found, hence cannot be updated";
+        }
+    }
 }
